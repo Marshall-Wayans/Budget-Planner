@@ -1,0 +1,67 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+}
+.balance {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+.transaction-form input, select, button {
+    width: 100%;
+    margin: 5px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.transaction-form button {
+    background: #28a745;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+.transaction-form button:hover {
+    background: #218838;
+}
+.transaction-list {
+    margin-top: 20px;
+    text-align: left;
+}
+ul {
+    list-style: none;
+    padding: 0;
+}
+li {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    background: #f8f9fa;
+    margin-top: 5px;
+    border-radius: 5px;
+}
+.income {
+    color: green;
+}
+.expense {
+    color: red;
+}
+.delete-btn {
+    background: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
