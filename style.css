@@ -1,67 +1,213 @@
+:root {
+    --background-color-light: #f0f2f5;
+    --container-background-light: #ffffff;
+    --text-color-light: #333;
+    --button-background-light: #28a745;
+    --button-hover-light: #218838;
+    --income-color-light: #28a745;
+    --expense-color-light: #e74c3c;
+    --delete-button-background-light: #e74c3c;
+    --delete-button-hover-light: #c0392b;
+}
+
+
+[data-theme="dark"] {
+    --background-color-dark: #181818;
+    --container-background-dark: #2c2c2c;
+    --text-color-dark: #e1e1e1;
+    --button-background-dark: #4CAF50;
+    --button-hover-dark: #388e3c;
+    --income-color-dark: #4CAF50;
+    --expense-color-dark: #f44336;
+    --delete-button-background-dark: #f44336;
+    --delete-button-hover-dark: #d32f2f;
+}
+
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-color-light);
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
+    transition: all 0.3s ease;
 }
+
+
 .container {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    width: 350px;
+    background: var(--container-background-light);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    padding: 30px;
     text-align: center;
+    overflow: hidden;
+    transition: all 0.3s ease;
 }
+
+
+h1 {
+    font-size: 2rem;
+    color: var(--text-color-light);
+    margin-bottom: 20px;
+}
+
+
 .balance {
-    font-size: 1.5em;
-    margin-bottom: 10px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
-.transaction-form input, select, button {
-    width: 100%;
-    margin: 5px 0;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+
+#balance {
+    color: var(--income-color-light);
 }
+
+
+.transaction-form {
+    margin-bottom: 30px;
+}
+
+.transaction-form input,
+.transaction-form select,
 .transaction-form button {
-    background: #28a745;
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin: 8px 0;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.transaction-form input:focus,
+.transaction-form select:focus,
+.transaction-form button:focus {
+    border-color: var(--button-background-light);
+    box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
+}
+
+.transaction-form button {
+    background-color: var(--button-background-light);
     color: white;
-    cursor: pointer;
     border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
+
 .transaction-form button:hover {
-    background: #218838;
+    background-color: var(--button-hover-light);
 }
+
+
 .transaction-list {
     margin-top: 20px;
-    text-align: left;
 }
+
+.transaction-list h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: var(--text-color-light);
+}
+
 ul {
     list-style: none;
     padding: 0;
 }
+
 li {
     display: flex;
     justify-content: space-between;
-    padding: 8px;
-    background: #f8f9fa;
-    margin-top: 5px;
-    border-radius: 5px;
+    align-items: center;
+    padding: 12px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin: 8px 0;
+    font-size: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
 }
+
+li:hover {
+    background-color: var(--background-color-light);
+}
+
 .income {
-    color: green;
+    color: var(--income-color-light);
 }
+
 .expense {
-    color: red;
+    color: var(--expense-color-light);
 }
+
 .delete-btn {
-    background: red;
+    background-color: var(--delete-button-background-light);
     color: white;
+    padding: 6px 12px;
     border: none;
-    padding: 5px 10px;
-    cursor: pointer;
     border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover {
+    background-color: var(--delete-button-hover-light);
+}
+
+.delete-btn:focus {
+    outline: none;
+}
+
+
+[data-theme="dark"] .container {
+    background: var(--container-background-dark);
+}
+
+[data-theme="dark"] h1, 
+[data-theme="dark"] .balance, 
+[data-theme="dark"] .transaction-list h3 {
+    color: var(--text-color-dark);
+}
+
+[data-theme="dark"] li {
+    background-color: #333;
+    color: var(--text-color-dark);
+}
+
+[data-theme="dark"] .delete-btn {
+    background-color: var(--delete-button-background-dark);
+}
+
+[data-theme="dark"] .delete-btn:hover {
+    background-color: var(--delete-button-hover-dark);
+}
+
+[data-theme="dark"] #balance {
+    color: var(--income-color-dark);
+}
+
+[data-theme="dark"] .transaction-form input,
+[data-theme="dark"] .transaction-form select,
+[data-theme="dark"] .transaction-form button {
+    background-color: #333;
+    color: var(--text-color-dark);
+    border-color: #555;
+}
+
+[data-theme="dark"] .transaction-form button {
+    background-color: var(--button-background-dark);
+}
+
+[data-theme="dark"] .transaction-form button:hover {
+    background-color: var(--button-hover-dark);
+}
+
+[data-theme="dark"] body {
+    background-color: var(--background-color-dark);
 }

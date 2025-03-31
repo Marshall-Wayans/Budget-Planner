@@ -5,7 +5,7 @@ window.onload = function () {
     fetchTransactions();
 };
 
-// Fetch transactions from the server
+
 async function fetchTransactions() {
     try {
         const response = await fetch('http://localhost:3000/transactions');
@@ -18,7 +18,7 @@ async function fetchTransactions() {
     }
 }
 
-// Add a transaction and update the server
+
 async function addTransaction() {
     const description = document.getElementById("description").value;
     const amount = parseFloat(document.getElementById("amount").value);
@@ -29,11 +29,11 @@ async function addTransaction() {
         return;
     }
 
-    // Create the transaction object
+    
     const transaction = { description, amount, category };
 
     try {
-        // Send the transaction to the server
+        
         const response = await fetch('http://localhost:3000/transactions', {
             method: 'POST',
             headers: {
@@ -54,10 +54,10 @@ async function addTransaction() {
     document.getElementById("amount").value = "";
 }
 
-// Remove a transaction and update the server
+
 async function removeTransaction(element, id, amount, category) {
     try {
-        // Delete the transaction from the server
+        
         await fetch(`http://localhost:3000/transactions/${id}`, {
             method: 'DELETE'
         });
@@ -70,12 +70,12 @@ async function removeTransaction(element, id, amount, category) {
     }
 }
 
-// Update the balance on the UI
+
 function updateBalance() {
     document.getElementById("balance").innerText = balance.toFixed(2);
 }
 
-// Render transactions in the UI
+
 function renderTransactions() {
     const transactionList = document.getElementById("transactions");
     transactionList.innerHTML = '';
@@ -88,3 +88,31 @@ function renderTransactions() {
         transactionList.appendChild(transactionItem);
     });
 }
+
+
+function toggleTheme() {
+    const currentTheme = document.body.getAttribute('data-theme');
+
+    if (currentTheme === 'dark') {
+        document.body.setAttribute('data-theme', 'light');
+        document.getElementById("theme-toggle").textContent = 'Switch to Dark Mode';
+    } else {
+        document.body.setAttribute('data-theme', 'dark');
+        document.getElementById("theme-toggle").textContent = 'Switch to Light Mode';
+    }
+}
+
+
+if (localStorage.getItem('theme') === 'dark') {
+    document.body.setAttribute('data-theme', 'dark');
+    document.getElementById("theme-toggle").textContent = 'Switch to Light Mode';
+} else {
+    document.body.setAttribute('data-theme', 'light');
+    document.getElementById("theme-toggle").textContent = 'Switch to Dark Mode';
+}
+
+
+document.getElementById("theme-toggle").addEventListener('click', () => {
+    const currentTheme = document.body.getAttribute('data-theme');
+    localStorage.setItem('theme', currentTheme);
+});

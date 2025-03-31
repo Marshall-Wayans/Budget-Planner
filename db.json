@@ -23,6 +23,12 @@
       "description": "partying",
       "amount": 10000,
       "category": "expense"
+    },
+    {
+      "id": "e619",
+      "description": "bought a dirt bike ",
+      "amount": 60000,
+      "category": "expense"
     }
   ]
 }
