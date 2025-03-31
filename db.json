@@ -1,0 +1,28 @@
+{
+  "transactions": [
+    {
+      "id": "a2a6",
+      "description": "web management",
+      "amount": 30000,
+      "category": "income"
+    },
+    {
+      "id": "35df",
+      "description": "dept paid",
+      "amount": 5000,
+      "category": "expense"
+    },
+    {
+      "id": "07e6",
+      "description": "building a website",
+      "amount": 50000,
+      "category": "income"
+    },
+    {
+      "id": "38fe",
+      "description": "partying",
+      "amount": 10000,
+      "category": "expense"
+    }
+  ]
+}
