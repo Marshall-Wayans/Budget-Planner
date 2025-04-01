@@ -1,33 +1,15 @@
 {
   "transactions": [
     {
-      "id": "a2a6",
-      "description": "web management",
-      "amount": 30000,
+      "id": "e2ea",
+      "description": "weather app development",
+      "amount": 150000,
       "category": "income"
     },
     {
-      "id": "35df",
-      "description": "dept paid",
-      "amount": 5000,
-      "category": "expense"
-    },
-    {
-      "id": "07e6",
-      "description": "building a website",
-      "amount": 50000,
-      "category": "income"
-    },
-    {
-      "id": "38fe",
-      "description": "partying",
-      "amount": 10000,
-      "category": "expense"
-    },
-    {
-      "id": "e619",
-      "description": "bought a dirt bike ",
-      "amount": 60000,
+      "id": "1886",
+      "description": "bought a dirt bike",
+      "amount": 75000,
       "category": "expense"
     }
   ]
